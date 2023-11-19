@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>王咏晗的网站</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f2f2f2;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            /* 让图片相对于这个容器定位 */
+        }
+
+        h1 {
+            color: #ef2323;
+        }
+
+        h2 {
+            color: #666;
+        }
+
+        select {
+            padding: 8px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #444;
+        }
+
+        #homePage {
+            display: none;
+            /* 隐藏主页内容 */
+        }
+
+        #navBar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #navContent {
+            display: none;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+        }
+
+        #navContent p {
+            margin: 5px 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>自我介绍</h1>
+    </div>
+
+    <div class="container">
+
+        <h2>欢迎访问我的网页！</h2>
+        <p>我是王咏晗，一个AI工程师（预定），专业从事图像处理。在这个网页上，你可以了解到关于我的一些基本信息和经历。</p>
+
+        <label for="selectPage">选择页面：</label>
+        <select id="selectPage" onchange="navigateToPage(this)">
+            <option value="#">请选择页面</option>
+            <option value="my life.html">简历</option>
+            <option value="introduction.html">个人生平</option>
+            <option value="work.html">完成项目</option>
+            <option value="suggest.html">建议反馈</option>
+        </select>
+    </div>
+
+    <script>
+        function navigateToPage(selObj) {
+            var selectedValue = selObj.options[selObj.selectedIndex].value;
+            if (selectedValue !== '#') {
+                window.location.href = selectedValue;
+            }
+        }
+
+        function toggleNavContent() {
+            var navContent = document.getElementById('navContent');
+            navContent.style.display = (navContent.style.display === 'block') ? 'none' : 'block';
+        }
+    </script>
+
+</body>
+
+</html>
